@@ -1,5 +1,5 @@
 document.querySelector('.cta').addEventListener('click', () => {
-    alert('Puszi :*');
+    alert('Puszi 😘');
 });
 
 window.addEventListener('scroll', () => {
