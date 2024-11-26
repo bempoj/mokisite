@@ -30,3 +30,23 @@ themeToggle.addEventListener('click', () => {
         localStorage.setItem('dark-mode', 'disabled');
     }
 });
+
+document.querySelectorAll('.sidebar-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const label = item.querySelector('.item-label').textContent;
+
+        if (label === 'Notes') {
+            const overlay = document.getElementById('notes-overlay');
+            overlay.style.display = 'flex';
+        } else {
+            alert(`You clicked on ${label}`);
+        }
+    });
+});
+
+const overlay = document.getElementById('notes-overlay');
+overlay.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target.classList.contains('close-overlay')) {
+        overlay.style.display = 'none';
+    }
+});
